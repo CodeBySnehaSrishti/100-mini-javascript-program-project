@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Wishlist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="wishlist-container">
+    <h2>Your Wishlist</h2>
+    <ul id="wishlist">
+        <!-- Wishlist items will be dynamically added here -->
+    </ul>
+    <button onclick="clearWishlist()">Clear Wishlist</button>
+</div>
+
+<div id="product-container">
+    <h2>Products</h2>
+    <div class="product">
+        <span>Product 1</span>
+        <button onclick="addToWishlist('Product 1')">Add to Wishlist</button>
+    </div>
+    <div class="product">
+        <span>Product 2</span>
+        <button onclick="addToWishlist('Product 2')">Add to Wishlist</button>
+    </div>
+    <div class="product">
+        <span>Product 3</span>
+        <button onclick="addToWishlist('Product 3')">Add to Wishlist</button>
+    </div>
+    <div class="product">
+        <span>Product 4</span>
+        <button onclick="addToWishlist('Product 4')">Add to Wishlist</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

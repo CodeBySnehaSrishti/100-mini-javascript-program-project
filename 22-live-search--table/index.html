@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Search in Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+
+        input {
+            width: 50%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background: #007BFF;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .no-results {
+            display: none;
+            font-weight: bold;
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Live Table Search</h2>
+    <input type="text" id="searchInput" placeholder="Search for names...">
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <tr><td>John Doe</td><td>25</td><td>New York</td></tr>
+            <tr><td>Jane Smith</td><td>30</td><td>Los Angeles</td></tr>
+            <tr><td>Michael Brown</td><td>35</td><td>Chicago</td></tr>
+            <tr><td>Emily Davis</td><td>28</td><td>San Francisco</td></tr>
+            <tr><td>David Wilson</td><td>40</td><td>Miami</td></tr>
+        </tbody>
+    </table>
+
+    <p class="no-results">No results found</p>
+
+    <script>
+        document.getElementById("searchInput").addEventListener("keyup", function () {
+            let filter = this.value.toLowerCase();
+            let rows = document.querySelectorAll("#tableBody tr");
+            let found = false;
+
+            rows.forEach(row => {
+                let text = row.textContent.toLowerCase();
+                let match = text.includes(filter);
+                row.style.display = match ? "" : "none";
+                if (match) found = true;
+            });
+
+            document.querySelector(".no-results").style.display = found ? "none" : "block";
+        });
+    </script>
+
+</body>
+</html>

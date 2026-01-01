@@ -53,4 +53,4 @@ Admin panels and dashboards
 ⭐ Part of
 
 This project is part of my 100+ JavaScript Mini Programs & Projects repository focused on logic building, DOM interaction, and real-world use cases.
-![alt text](../project-img-1.png)
+![alt text](https://github.com/CodeBySnehaSrishti/100-mini-javascript-program-project/blob/1c5209c2280491d8c4bf685c1e89c8eda3118350/1-print%20page%20button/project-img-1.png)

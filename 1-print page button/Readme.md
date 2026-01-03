@@ -19,11 +19,13 @@ JavaScript function printbtn() is called
 
 window.print() opens the browser print dialog
 
-📂 Project Structure
-/print-page-button
-│── index.html
-│── style.css
-│── README.md
+📂 Project Structure 
+
+ 1-print-page-button =>
+
+1. index.html
+2. project-img-1.png
+3. Readme.md
 
 🧠 JavaScript Logic
 function printbtn() {
@@ -53,4 +55,5 @@ Admin panels and dashboards
 ⭐ Part of
 
 This project is part of my 100+ JavaScript Mini Programs & Projects repository focused on logic building, DOM interaction, and real-world use cases.
-![alt text](../project-img-1.png)
+
+<video controls src="vid-1.mp4" title="Title"></video>

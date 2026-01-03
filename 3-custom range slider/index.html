@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Range Slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="slider-container">
+        <input type="range" min="0" max="100" value="50" class="slider" id="rangeSlider">
+        <div class="value" id="sliderValue">50</div>
+    </div>
+
+    <script>
+
+        const slider = document.getElementById("rangeSlider");
+        const output = document.getElementById("sliderValue");
+
+        slider.oninput = function () {
+            output.textContent = this.value;
+        }
+        
+    </script>
+
+
+</body>
+</html>

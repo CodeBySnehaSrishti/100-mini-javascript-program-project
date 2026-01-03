@@ -56,4 +56,4 @@ Admin panels and dashboards
 
 This project is part of my 100+ JavaScript Mini Programs & Projects repository focused on logic building, DOM interaction, and real-world use cases.
 
-<video controls src="vid-1.mp4" title="Title"></video>
+![alt text](vid-1.gif)

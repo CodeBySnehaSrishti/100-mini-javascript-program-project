@@ -12,13 +12,11 @@
   background: palevioletred;
   color: white;
   padding: 15px 50px;
-
 }
 h1{
     font-size: 25px;
     letter-spacing: 2px;
 }
-
 .toggle-btn{
   width: 40px;
   height: 20px;

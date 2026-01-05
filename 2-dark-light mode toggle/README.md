@@ -10,4 +10,4 @@ This beginner-friendly project helps in understanding DOM manipulation, CSS pseu
 
 This project is part of my 100+ JavaScript Mini Programs & Projects repository focused on logic building, DOM interaction, and real-world use cases.
 
-![alt text](vid-1.gif)
+![alt text](https://github.com/CodeBySnehaSrishti/100-mini-javascript-program-project/blob/041df5659edf825d3cbba2ce8926174147e4ca92/2-dark-light%20mode%20toggle/vid-2.gif)

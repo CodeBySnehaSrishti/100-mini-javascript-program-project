@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Card Modal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Product Cards -->
+  <div class="product-card" onclick="openModal(1)">
+    <img class="product-image" src="4782d4ce-3554-4854-b3ca-1aca645daf69.jpeg" alt="Product 1">
+    <div class="product-details">
+      <div class="product-title">Product 1</div>
+      <div class="product-price">$25</div>
+    </div>
+  </div>
+ 
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal(1)">&times;</span>
+      <img src="4782d4ce-3554-4854-b3ca-1aca645daf69.jpeg" id="modal-image1" alt="Product 1">
+      <h2 id="modal-title1">Product 1</h2>
+      <p id="modal-description1">Detailed description of Product 1 goes here. It has great features and benefits for you
+        to enjoy.</p>
+    </div>
+  </div>
+ 
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>

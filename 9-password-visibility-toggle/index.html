@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Visibility Toggle</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    .password-container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    input {
+      width: 200px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .toggle-icon {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="password-container">
+    <label for="password">Password:</label>
+    <div style="position: relative;">
+      <input type="password" id="password" placeholder="Enter your password">
+      <span class="toggle-icon" id="toggleIcon">👁️</span>
+    </div>
+  </div>
+
+  <script>
+    const passwordInput = document.getElementById('password');
+    const toggleIcon = document.getElementById('toggleIcon');
+
+    toggleIcon.addEventListener('click', () => {
+      // Toggle the password visibility
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text'; // Show password
+        toggleIcon.textContent = '🙈'; // Change icon to 'hide'
+      } else {
+        passwordInput.type = 'password'; // Hide password
+        toggleIcon.textContent = '👁️'; // Change icon to 'show'
+      }
+    });
+  </script>
+
+</body>
+</html>

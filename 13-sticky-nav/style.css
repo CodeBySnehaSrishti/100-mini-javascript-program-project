@@ -1,0 +1,110 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body{
+  scroll-behavior: smooth;
+}
+nav{
+  background-color: rgb(56, 56, 56);
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem  2rem;
+  color: white;
+}
+#navbar{
+  display: flex;
+  
+}
+#navbar  li{
+  list-style: none;
+}
+#navbar a{
+  padding: 0px 20px;
+  text-decoration: none;
+  color: white;
+}
+#navbar a:hover{
+  text-decoration: underline;
+}
+section{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#Home {
+  background:purple;
+}
+#About {
+  background:green;
+}
+#Project {
+  background:crimson;
+}
+#Contact {
+  background:chartreuse;
+} 
+#Services{
+  background: yellow;
+}
+
+
+footer{
+  background-color: rgb(56, 56, 56);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 1.5rem;
+}
+footer ul{
+  display: flex;
+  /* justify-content: center; */
+
+}
+footer ul li {
+  padding:   10px;
+  list-style: none;
+}
+footer ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+
+.topbtn{
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  display: none;
+  padding: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 50%;
+}
+.topbtn:hover{
+    background-color: #7bd5f6;
+}
+@media(max-width:600px){
+   nav{
+    flex-direction: column;
+   }
+   .logo{
+    text-align: center;
+    padding:10px ;
+   }
+
+   footer ul{
+    flex-direction: column;
+    padding: 1rem;
+   }
+   footer ul li{
+    padding: 0;
+   }
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Progress Bar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      padding: 20px;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .skills-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .skill {
+      margin-bottom: 20px;
+    }
+
+    .skill-title {
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #444;
+    }
+
+    .progress-bar {
+      position: relative;
+      height: 20px;
+      background-color: #e0e0e0;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background-color: #007bff;
+      width: 0%;
+      border-radius: 10px;
+      transition: width 0.5s ease;
+    }
+
+    .progress-percent {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      color: #fff;
+      line-height: 20px;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>My Skills</h1>
+  <div class="skills-container">
+    <div class="skill" data-skill="HTML" data-progress="90">
+      <div class="skill-title">
+        <span>HTML</span>
+        <span class="skill-percent">0%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-bar-fill">
+          <span class="progress-percent"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="skill" data-skill="CSS" data-progress="80">
+      <div class="skill-title">
+        <span>CSS</span>
+        <span class="skill-percent">0%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-bar-fill">
+          <span class="progress-percent"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="skill" data-skill="JavaScript" data-progress="70">
+      <div class="skill-title">
+        <span>JavaScript</span>
+        <span class="skill-percent">0%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-bar-fill">
+          <span class="progress-percent"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="animateProgress()">Show Progress</button>
+
+  <script>
+    function animateProgress() {
+      const skills = document.querySelectorAll('.skill');
+
+      skills.forEach(skill => {
+        const progress = skill.getAttribute('data-progress');
+        const progressBarFill = skill.querySelector('.progress-bar-fill');
+        const skillPercent = skill.querySelector('.skill-percent');
+
+        progressBarFill.style.width = `${progress}%`;
+        skillPercent.textContent = `${progress}%`;
+      });
+    }
+  </script>
+</body>
+</html>

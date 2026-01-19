@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Timeout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f8d7da;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 20px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        h1 {
+            color: #721c24;
+        }
+        p {
+            color: #856404;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="warning-box">
+        <h1>Your Session is About to Expire!</h1>
+        <p>Click the button below to keep your session active.</p>
+        <button onclick="extendSession()">Extend Session</button>
+    </div>
+
+    <script>
+        function extendSession() {
+            alert("Session Extended! You will be redirected to the main page.");
+            window.location.href = "main.html";
+        }
+
+        // Automatically log out after 10 seconds of inactivity (or session expired)
+        setTimeout(() => {
+            alert("Session Expired. Redirecting...");
+            window.location.href = "main.html";
+        }, 10000);
+    </script>
+
+</body>
+</html>

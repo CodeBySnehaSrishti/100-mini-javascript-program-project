@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Copy to Clipboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      margin: 50px auto;
+      max-width: 400px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .message {
+      margin-top: 10px;
+      font-size: 14px;
+      color: green;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <textarea id="textToCopy" placeholder="Write something here..."></textarea>
+    <button onclick="copyToClipboard()">Copy to Clipboard</button>
+    <p class="message" id="message">Copied!</p>
+  </div>
+
+  <script>
+    function copyToClipboard() {
+      const textarea = document.getElementById("textToCopy");
+      textarea.select();
+      textarea.setSelectionRange(0, 99999); // For mobile devices
+      navigator.clipboard.writeText(textarea.value)
+        .then(() => {
+          const message = document.getElementById("message");
+          message.style.display = "block";
+          setTimeout(() => message.style.display = "none", 2000);
+        })
+        .catch(() => alert("Failed to copy!"));
+    }
+  </script>
+</body>
+</html>
+

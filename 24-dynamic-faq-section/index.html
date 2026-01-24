@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic FAQ Section</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="faq-section">
+        <h1>Frequently Asked Questions</h1>
+        <div class="faq">
+            <div class="question" onclick="toggleFAQ(this)">
+                <h3>What is your refund policy?</h3>
+                <span class="icon">+</span>
+            </div>
+            <div class="answer">
+                <p>We offer a 30-day refund policy for all our products.</p>
+            </div>
+        </div>
+        <div class="faq">
+            <div class="question" onclick="toggleFAQ(this)">
+                <h3>How do I contact support?</h3>
+                <span class="icon">+</span>
+            </div>
+            <div class="answer">
+                <p>You can contact support via our email or the contact form on our website.</p>
+            </div>
+        </div>
+        <div class="faq">
+            <div class="question" onclick="toggleFAQ(this)">
+                <h3>Do you offer international shipping?</h3>
+                <span class="icon">+</span>
+            </div>
+            <div class="answer">
+                <p>Yes, we ship to most countries worldwide.</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

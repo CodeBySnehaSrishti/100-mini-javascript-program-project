@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time of Day Message</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .message {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="message" id="greeting"></div>
+
+    <script>
+        function getGreeting() {
+            let hours = new Date().getHours();
+            let message = "";
+
+            if (hours < 12) {
+                message = "Good Morning! ☀️";
+            } else if (hours < 18) {
+                message = "Good Afternoon! 🌤️";
+            } else {
+                message = "Good Evening! 🌙";
+            }
+
+            document.getElementById("greeting").innerText = message;
+        }
+
+        getGreeting();
+    </script>
+
+</body>
+</html>

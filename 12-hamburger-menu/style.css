@@ -1,124 +1,121 @@
-* {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  padding: 0;
-  box-sizing: border-box;
-  
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    color: white;
+    font-family: sans-serif;
+    font-size: 1rem;
 }
 body{
-  width: 100%;
-  color: honeydew;
-  font-size: 1.5rem;
-  font-family: sans-serif;
+    background-color: rgb(25, 4, 44);
 }
 a{
-  text-decoration: none;
-  color: honeydew;
-  list-style: none;
-  font-family: inherit;
-
+    text-decoration: none;
+    color: white;
+}
+li{
+    list-style: none;
 }
 header{
-  width: 100%;
-   background: rgb(141, 49, 254);
-   position: fixed;
-   top: 0;
-   left: 0;
-}
-.container{
-  margin: auto;
-  display: flex;
-  padding: 10px 30px;
-  justify-content:space-between;
-  position: relative;
-}
-/*  ===============mobile resposice navbar================ */
-.navbar{
-  
-  left: -200px;
-  max-width: 200px;
-  width: 100%;
-  list-style: none;
-  position: absolute;
-  text-align:center;
-  top: 50px;
-  background: rgb(148, 63, 251);
-  padding: 20px 30px;
-  visibility: hidden;
-  transition: 0.3s ease;
-}
-.navbar.active {
-  visibility: visible;
-  transform: translateX(200px);
-}
-.navbar .list{
-  padding: 10px;
-}
-li a:hover{
-  color:rgba(252, 0, 185, 0.948);
-}
-/* drop down */
-.services{
-  position: relative;
-}
-.dropdown{
-   display: none;
-  position: absolute;
-  background: blueviolet;
-  z-index: 10;
-  top: 0px;
-  left: 130px;
-  width: 180px;
-  padding: 8px;
-}
-.dropdown .sub-list{
-   list-style: none;
-   padding: 5px;
-}
-.services:hover .dropdown{
-   display: block;
-  
-}
-
-
-
-/* ======================menu toggle btn============== */
-
-ion-icon{
-  font-size: 30px;
-  cursor: pointer;
-}
-
-.btn.active .open,
-.btn .close {
-  display: none;
-}
-
-.btn.active .close,
-.btn .open {
-  display: block;
-}
-/*=================big screen resposive navbar===============*/
-@media (min-width:768px){
-  .container{
-    /* justify-content: space-between; */
-    align-items: center;
-  }
-  .navbar{
-    all:unset;
-    display:flex;
-    gap:20px;
-  }
-  .btn{
-   display: none;
-  }
-  .list{
-    list-style: none;
-  }
-  .dropdown{
+    max-width: 100%;
+    width: 100%;
+    background-color: rgb(142, 33, 142);
+    position: relative;
    
-  top: 55px;
-  left: -30px;
- 
 }
+navbar{
+    margin: auto;
+    width: 90%;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 15px;
 }
+
+.logo{
+    font-size: 25px;
+}
+/* ==============menu btn ========================== */
+
+ ion-icon{
+    font-size: 30px;
+    transition:transform 0.3s ease;
+} 
+/* ==============menu btn animation========== */
+
+.menu-btns.active ion-icon{
+    transform: rotate(180deg);
+}
+
+.menu-btns.active .open , .menu-btns .close{
+    display: none;
+}
+.menu-btns.active .close , .menu-btns .open{
+    display: block;
+}
+
+/*============ menu list========================== */
+.menu-list{
+   background-color: rgb(125, 0, 171);
+   position: absolute;
+   width: 200px;
+   left: 0px;
+   top: 60px;
+   padding: 10px;
+   text-align: center;
+   visibility: hidden;
+   transition: 0.5s ease;
+    transform: translateX(-200px);
+}
+.menu-list.active{
+  transform: translateX(0);
+   visibility: visible;
+}
+
+.menu-list li{
+    padding: 15px;
+       font-size: 1.2rem;
+     scale: 1;
+}
+.menu-list li:hover{
+    scale: 1.1;
+}
+.services{
+    position: relative;
+}
+.services:hover .sub-list{
+     display: block;
+    
+}
+.sub-list{
+    position: absolute;
+    left: 180px;
+    top: 10px;
+    width: 150px;
+    background-color: blueviolet;
+    display: none;
+}
+
+/* ===============resposive for wide screen================ */
+@media(min-width:768px){
+.menu-list{
+    all: unset;
+    display: flex;
+}
+.menu-btns{
+    display: none;
+}
+
+.sub-list{
+    position: absolute;
+    left: -25px;
+    top: 50px;
+    width: 150px;
+    background-color: blueviolet;
+    display: none;
+}
+
+}
+

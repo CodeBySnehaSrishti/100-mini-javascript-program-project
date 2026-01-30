@@ -12,36 +12,37 @@
 
 <body>
     <header>
-        <div class="container">
-            <div class="logo">Logo</div>
-            <ul class="navbar">
-                <li class="list"><a href="#">About</a></li>
-                <li class="list"><a href="#">Project</a></li>
-                <li class="list services ">
-                    <a href="#">Services</a>
-                    <ul class="dropdown ">
-                        <li class="sub-list"><a href="#">Web design</a></li>
-                        <li class="sub-list"><a href="#">web devloper</a></li>
+        <navbar>
+            <div class="logo"><a href="#">Logo</a></div>
+            <div class="menu-btns">
+                
+              
+                <ion-icon class="open" name="menu-outline"></ion-icon>
+                  <ion-icon class="close" name="close-outline"></ion-icon>
+            </div>
+            <ul class="menu-list">
+                <li class="list"><a href="#">About </a></li>
+                <li class="list services"><a href="#">Services</a>
+                    <ul class="sub-list">
+                    <li class=" list"><a href="#">Web devloper</a></li>
+                    <li class=" list"><a href="#">web designer</a></li>
                     </ul>
                 </li>
+                <li class="list"><a href="#">Project</a></li>
                 <li class="list"><a href="#">Contact</a></li>
             </ul>
-            <div class="btn">
-                <ion-icon name="menu-outline" class="icon open"></ion-icon>
-                <ion-icon name="close-outline" class="icon close"></ion-icon>
-            </div>
-        </div>
+        </navbar>
     </header>
     <script>
-        let btn = document.querySelector(".btn");
-        let navbar = document.querySelector(".navbar");
-       
-
-        btn.addEventListener("click", function () {
-            navbar.classList.toggle("active")
-            this.classList.toggle("active")
-        })
+        let btn =document.querySelector('.menu-btns')
+        let navbar =document.querySelector('navbar')
+        let menu =document.querySelector('.menu-list')
+       btn.addEventListener("click",function(){
+        navbar.classList.toggle("active")
+        btn.classList.toggle("active")
+        menu.classList.toggle("active")
+       })
+      
     </script>
 </body>
-
 </html>

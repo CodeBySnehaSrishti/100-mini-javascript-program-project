@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shake Effect on Error</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f9f9f9;
+    }
+
+    .form-container {
+      width: 300px;
+      padding: 2rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    .form-container input:focus {
+      border-color: #6200ea;
+      outline: none;
+    }
+
+    .error-message {
+      color: #e63946;
+      font-size: 14px;
+      display: none;
+      margin-bottom: 1rem;
+    }
+
+    /* Shake Animation */
+    .shake {
+      animation: shake 0.5s ease;
+    }
+
+    @keyframes shake {
+      0%, 100% {
+        transform: translateX(0);
+      }
+      20%, 60% {
+        transform: translateX(-10px);
+      }
+      40%, 80% {
+        transform: translateX(10px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <input type="text" id="username" placeholder="Enter your username">
+    <p class="error-message" id="error-message">Please enter a valid username.</p>
+    <button id="submit-btn">Submit</button>
+  </div>
+
+  <script>
+    // Function to validate the form
+    function validateForm() {
+      const input = document.getElementById('username');
+      const errorMessage = document.getElementById('error-message');
+
+      // If the input is empty, show an error and add the shake effect
+      if (input.value.trim() === '') {
+        errorMessage.style.display = 'block';
+        input.classList.add('shake');
+
+        // Remove the shake class after the animation completes
+        setTimeout(() => {
+          input.classList.remove('shake');
+        }, 500);
+      } else {
+        errorMessage.style.display = 'none';
+        alert('Form submitted successfully!');
+      }
+    }
+
+    // Attach event listener to the button
+    document.getElementById('submit-btn').addEventListener('click', validateForm);
+  </script>
+
+</body>
+</html>

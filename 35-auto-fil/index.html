@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto Fill Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .form-container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .form-container input, .form-container select {
+      width: 100%;
+      margin: 10px 0;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .form-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .form-container button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Auto Fill Form</h2>
+    <label for="user">Select User:</label>
+    <select id="user" onchange="autoFillForm()">
+      <option value="">-- Select User --</option>
+      <option value="1">John Doe</option>
+      <option value="2">Jane Smith</option>
+      <option value="3">Sam Wilson</option>
+    </select>
+
+    <form id="userForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Name">
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Email">
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" placeholder="Phone">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    const users = {
+      1: { name: "John Doe", email: "john.doe@example.com", phone: "123-456-7890" },
+      2: { name: "Jane Smith", email: "jane.smith@example.com", phone: "987-654-3210" },
+      3: { name: "Sam Wilson", email: "sam.wilson@example.com", phone: "555-555-5555" }
+    };
+
+    function autoFillForm() {
+      const userId = document.getElementById("user").value;
+      const form = document.getElementById("userForm");
+
+      if (userId && users[userId]) {
+        form.name.value = users[userId].name;
+        form.email.value = users[userId].email;
+        form.phone.value = users[userId].phone;
+      } else {
+        form.name.value = "";
+        form.email.value = "";
+        form.phone.value = "";
+      }
+    }
+  </script>
+</body>
+</html>

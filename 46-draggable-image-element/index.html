@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draggable Images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .draggable {
+            position: absolute;
+            cursor: grab;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            user-select: none;
+        }
+
+        .draggable img {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="draggable" id="img1" style="top: 50px; left: 50px;">
+        <img src="women.jpg" alt="Image 1">
+    </div>
+    <div class="draggable" id="img2" style="top: 50px; left: 200px;">
+        <img src="women.jpg" alt="Image 2">
+    </div>
+    <div class="draggable" id="img3" style="top: 200px; left: 50px;">
+        <img src="women.jpg" alt="Image 3">
+    </div>
+    <div class="draggable" id="img4" style="top: 200px; left: 200px;">
+        <img src="women.jpg" alt="Image 4">
+    </div>
+    <div class="draggable" id="img5" style="top: 150px; left: 125px;">
+        <img src="women.jpg" alt="Image 5">
+    </div>
+
+    <script>
+        function makeDraggable(element) {
+            element.onmousedown = function(event) {
+                let shiftX = event.clientX - element.getBoundingClientRect().left;
+                let shiftY = event.clientY - element.getBoundingClientRect().top;
+
+                function moveAt(pageX, pageY) {
+                    element.style.left = pageX - shiftX + "px";
+                    element.style.top = pageY - shiftY + "px";
+                }
+
+                function onMouseMove(event) {
+                    moveAt(event.pageX, event.pageY);
+                }
+
+                document.addEventListener("mousemove", onMouseMove);
+
+                element.onmouseup = function() {
+                    document.removeEventListener("mousemove", onMouseMove);
+                    element.onmouseup = null;
+                };
+            };
+
+            element.ondragstart = function() {
+                return false;
+            };
+        }
+
+        for (let i = 1; i <= 5; i++) {
+            makeDraggable(document.getElementById("img" + i));
+        }
+    </script>
+
+</body>
+</html>
